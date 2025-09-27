@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://hesgoal2.world/sitemap.xml
+Sitemap: https://nflbite.top/sitemap.xml
+
 
