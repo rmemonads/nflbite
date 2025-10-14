@@ -120,9 +120,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 @media (max-width: 480px) {
 	#overlay-search-results .search-result-item { flex-basis: 130px; };
   .header-search {
-    max-width: 140px;
+    max-width: 130px;
   }
-  .header-search input{font-size:12px}
+  .header-search input{font-size:12px; max-width: 130px;}
   .header-left, .header-right{
 	  gap: 7px;
   }
@@ -374,4 +374,5 @@ footer {
     box-shadow: 0 0 30px rgba(255, 94, 0, 0.9);
   }
 }
+
 
