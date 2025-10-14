@@ -9,18 +9,12 @@
 
   <link rel="canonical" href="https://nflbite.top/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
-  <!-- **PERFORMANCE TWEAK**: Preconnect to critical third-party origins -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://discord.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-
   <link rel="stylesheet" href="style.css">
   
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-
+  
   
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y99MPECJ5" defer></script>
@@ -41,6 +35,7 @@
     <li class="menu-item"><a href="/Schedule/#/Baseball">MLB</a></li>
     <li class="menu-item"><a href="/Schedule/#/Fight">UFC</a></li>
     <li class="menu-item"><a href="/Schedule/#/Motor-sports">F1</a></li>
+    <!-- **UPDATED**: Added an ID to the anchor tag -->
     <li class="nav-discord-btn"><a id="discord-join-link" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Join Discord</a></li>
   </ul>
 </header>
@@ -78,6 +73,7 @@
       <a href="/Schedule/#/other" class="category-card"><img src="./Images/Other.png" alt="Other Logo" loading="lazy" width="90" height="90"><span>Other</span></a>
     </div>
   </section>
+
 
   <!-- ARTICLE INFO SECTION -->
   <section class="article-container">
@@ -204,19 +200,14 @@
 <!-- Search Overlay -->
 <div class="search-overlay" id="search-overlay">
     <div class="search-overlay-content">
-        <button class="close-search-btn" id="close-search-btn" aria-label="Close Search">
-            <!-- **PERFORMANCE FIX**: Replaced <i> tag with inline SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" role="img" aria-label="Close Icon"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
-        </button>
+        <button class="close-search-btn" id="close-search-btn" aria-label="Close Search"><i class="fas fa-times"></i></button>
         <div class="search-input-container">
-            <!-- **PERFORMANCE FIX**: Replaced <i> tag with inline SVG -->
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Search Icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            <i class="fas fa-search"></i>
             <input type="text" id="search-input" placeholder="Start typing to find any match..." autocomplete="off">
         </div>
         <div class="search-results-container" id="search-results-container">
             <div class="search-placeholder">
-                <!-- **PERFORMANCE FIX**: Replaced <i> tag with inline SVG -->
-                <svg class="search-icon-large" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Search Icon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                <i class="fas fa-search"></i>
                 <p>Find live matches by team, sport, or title.</p>
             </div>
         </div>
@@ -227,8 +218,5 @@
 
 </body>
 </html>
-
-
-
 
 
