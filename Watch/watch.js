@@ -360,7 +360,7 @@ async function loadDiscordWidget() {
             const moreLink = document.createElement('a');
             moreLink.href = inviteUrl;
             moreLink.target = '_blank';
-            moreLink.rel = 'noopener noreferrer nofollow';
+            moreLink.rel = 'noopener noreferrer';
             moreLink.textContent = 'Discord!';
             p.append('and more in our ', moreLink);
             moreLi.appendChild(p);
@@ -384,3 +384,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 window.addEventListener('hashchange', initializeWatchPage);
+
