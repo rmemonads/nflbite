@@ -27,10 +27,6 @@
 </head>
 <body>
 
-<div class="site-title-section">
-  <h1>NFLbite Live Sports: NFL, NBA, Soccer, F1 & More Streaming</h1>
-</div>
-
 <!-- Header Menus -->
 <header class="main-header">
   <ul class="nav-menu">
@@ -39,21 +35,31 @@
     <li class="menu-item"><a href="/Schedule/#/Baseball">MLB</a></li>
     <li class="menu-item"><a href="/Schedule/#/Fight">UFC</a></li>
     <li class="menu-item"><a href="/Schedule/#/Motor-sports">F1</a></li>
-    <li class="more-btn"><a href="/Schedule/?popular=true">Schedule ➝</a></li>
+    <!-- **UPDATED**: Added an ID to the anchor tag -->
+    <li class="nav-discord-btn"><a id="discord-join-link" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Join Discord</a></li>
   </ul>
 </header>
 
 <main>
   <!-- CATEGORY SECTION -->
   <section class="categories-container">
-    <h2>Explore Your Favorite Sports</h2>
+    <h1 class="main-content-title" id="main-title">NFLbite Live Sports: NFL, NBA, Soccer, F1 & More Streaming</h1>
+
+    <!-- Search Bar and Schedule Button -->
+    <div class="search-and-schedule-container">
+        <div class="search-trigger" id="search-trigger">
+            <i class="fas fa-search"></i>
+            <span>Search for a match, team, or category...</span>
+        </div>
+        <a href="/Schedule/?popular=true" class="schedule-button">Full Schedule</a>
+    </div>
+
     <div class="categories-grid">
-      <!-- Above-the-fold images: Load Eagerly for performance -->
+      <!-- Your category cards are here, unchanged -->
       <a href="/Schedule/#/basketball" class="category-card"><img src="./Images/Basketball.png" alt="Basketball Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>Basketball</span></a>
       <a href="/Schedule/#/football" class="category-card"><img src="./Images/Football.png" alt="Football Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>Football</span></a>
       <a href="/Schedule/#/american-football" class="category-card"><img src="./Images/American-football.png" alt="American Football Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>American Football</span></a>
       <a href="/Schedule/#/hockey" class="category-card"><img src="./Images/Hockey.png" alt="Hockey Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>Hockey</span></a>
-      <!-- Below-the-fold images: Load Lazily -->
       <a href="/Schedule/#/baseball" class="category-card"><img src="./Images/Baseball.png" alt="Baseball Logo" loading="lazy" width="90" height="90"><span>Baseball</span></a>
       <a href="/Schedule/#/motor-sports" class="category-card"><img src="./Images/Motor-sport.png" alt="Motor-sports Logo" loading="lazy" width="90" height="90"><span>Motor-sports</span></a>
       <a href="/Schedule/#/fight" class="category-card"><img src="./Images/Fight.png" alt="Fight (UFC, Boxing) Logo" loading="lazy" width="90" height="90"><span>Fight</span></a>
@@ -68,14 +74,15 @@
     </div>
   </section>
 
+
   <!-- ARTICLE INFO SECTION -->
   <section class="article-container">
     <article>
+        <!-- Your full, unchanged article content is here -->
         <div class="article-intro animate-on-scroll">
             <p>Sports fans across the world are always looking for reliable ways to watch their favorite teams and competitions live. Among the many platforms that have emerged, <strong>NFLbite</strong> has become one of the most talked-about names in free sports streaming. Whether you’re into <em>NFL football</em>, <em>NBA basketball</em>, <em>soccer</em>, or even <em>Formula 1</em>, NFLbite and its alternatives have shaped how fans access sports events online.</p>
             <p>These alternatives highlight the growing demand for <em>free sports streaming platforms</em>, even though legality remains an issue.</p>
         </div>
-
         <div class="info-card animate-on-scroll">
             <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
             <div class="info-content">
@@ -89,7 +96,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="info-card animate-on-scroll">
             <div class="info-icon"><i class="fas fa-heart"></i></div>
             <div class="info-content">
@@ -104,37 +110,20 @@
                 <p>In short, sports fans want quick, free, and global access to their favorite teams. <a href="/">NFLbite</a> fulfills that demand.</p>
             </div>
         </div>
-
         <div class="info-card wide-card animate-on-scroll">
             <div class="info-icon"><i class="fas fa-trophy"></i></div>
             <div class="info-content">
                 <h3>NFLbite and Major Football Competitions</h3>
                 <p>Below are sections covering how NFLbite-type platforms typically provide access to major football (soccer) competitions. Note that availability, links, and quality vary over time and depend on the specific mirrors or alternative sites at the moment.</p>
                 <div class="competition-grid">
-                    <div class="competition-item">
-                        <h4>Premier League</h4>
-                        <p>Premier League matches — featuring teams like <em>Manchester United</em>, <em>Chelsea</em>, <em>Liverpool</em>, and <em>Arsenal</em> — are among the most-watched events. NFLbite-style streams often include multiple links for each fixture, helping fans avoid regional restrictions.</p>
-                    </div>
-                    <div class="competition-item">
-                        <h4>UEFA Champions League</h4>
-                        <p>The Champions League draws global audiences for matchups between clubs such as <em>Real Madrid</em>, <em>Barcelona</em>, <em>Bayern Munich</em>, and <em>Paris Saint-Germain</em>. Users typically find streams labeled specifically for "Champions League" on NFLbite and alternatives.</p>
-                    </div>
-                    <div class="competition-item">
-                        <h4>Copa Libertadores & Copa Sudamericana</h4>
-                        <p>South American club competitions like Copa Libertadores showcase teams such as <em>Boca Juniors</em>, <em>Flamengo</em>, and <em>River Plate</em>. Platforms like NFLbite cater strongly to Latin American audiences with dedicated links and Spanish/Portuguese stream options.</p>
-                    </div>
-                    <div class="competition-item">
-                        <h4>FIFA World Cup & Copa América</h4>
-                        <p>Major international tournaments attract huge spikes in traffic. During the World Cup or Copa América, NFLbite-style sites often aggregate dozens of links, sometimes with multilingual commentary options.</p>
-                    </div>
-                    <div class="competition-item">
-                         <h4>La Liga, Bundesliga, Serie A, Ligue 1</h4>
-                        <p>Top European leagues are well-covered by free stream aggregators. Fans searching for Real Madrid vs Barcelona, Bayern Munich fixtures, or Juventus matches will often find multiple mirror links on NFLbite-like sites.</p>
-                    </div>
+                    <div class="competition-item"><h4>Premier League</h4><p>Premier League matches — featuring teams like <em>Manchester United</em>, <em>Chelsea</em>, <em>Liverpool</em>, and <em>Arsenal</em> — are among the most-watched events. NFLbite-style streams often include multiple links for each fixture, helping fans avoid regional restrictions.</p></div>
+                    <div class="competition-item"><h4>UEFA Champions League</h4><p>The Champions League draws global audiences for matchups between clubs such as <em>Real Madrid</em>, <em>Barcelona</em>, <em>Bayern Munich</em>, and <em>Paris Saint-Germain</em>. Users typically find streams labeled specifically for "Champions League" on NFLbite and alternatives.</p></div>
+                    <div class="competition-item"><h4>Copa Libertadores & Copa Sudamericana</h4><p>South American club competitions like Copa Libertadores showcase teams such as <em>Boca Juniors</em>, <em>Flamengo</em>, and <em>River Plate</em>. Platforms like NFLbite cater strongly to Latin American audiences with dedicated links and Spanish/Portuguese stream options.</p></div>
+                    <div class="competition-item"><h4>FIFA World Cup & Copa América</h4><p>Major international tournaments attract huge spikes in traffic. During the World Cup or Copa América, NFLbite-style sites often aggregate dozens of links, sometimes with multilingual commentary options.</p></div>
+                    <div class="competition-item"><h4>La Liga, Bundesliga, Serie A, Ligue 1</h4><p>Top European leagues are well-covered by free stream aggregators. Fans searching for Real Madrid vs Barcelona, Bayern Munich fixtures, or Juventus matches will often find multiple mirror links on NFLbite-like sites.</p></div>
                 </div>
             </div>
         </div>
-
         <div class="info-card animate-on-scroll">
             <div class="info-icon"><i class="fas fa-basketball-ball"></i></div>
             <div class="info-content">
@@ -149,7 +138,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="info-card animate-on-scroll">
             <div class="info-icon"><i class="fas fa-exclamation-triangle"></i></div>
             <div class="info-content">
@@ -162,7 +150,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="info-card animate-on-scroll">
             <div class="info-icon"><i class="fas fa-puzzle-piece"></i></div>
             <div class="info-content">
@@ -170,7 +157,6 @@
                 <p>The streaming market has fragmented with rights split across services like <em>ESPN+</em>, <em>DAZN</em>, <em>Peacock</em>, and other regional broadcasters. When rights are split and subscription costs add up, fans look for a simpler — and cheaper — way. That demand is what keeps NFLbite and its alternatives in business.</p>
             </div>
         </div>
-
         <div class="article-conclusion animate-on-scroll">
             <h3>Conclusion</h3>
             <p><strong>NFLbite</strong> has carved out a major place in the world of free sports streaming. From <em>NFL football</em> to <em>UEFA Champions League soccer</em>, from <em>NBA</em> to <em>Formula 1</em>, it offers sports fans a gateway to live events they might otherwise miss.</p>
@@ -194,9 +180,9 @@
     <li><a href="/About/">About</a></li>
     <li><a href="/Terms/">Terms</a></li>
     <li><a href="/Privacy/">Privacy</a></li>
-    <li><a href="/Disclaimer/">Disclaimer</a></li>
-    <li><a href="/DMCA/">DMCA</a></li>
-    <li><a href="/Contact/">Contact Us</a></li>
+	  <li><a href="/Disclaimer/">Disclaimer</a></li>
+	  <li><a href="/DMCA/">DMCA</a></li>
+	  <li><a href="/Contact/">Contact Us</a></li>
   </ul>
   <p>© 2025 nflbite.top. All rights reserved.</p>
 </footer>
@@ -211,8 +197,24 @@
   <span id="close-ad">&#10060;</span>
 </div>
 
+<!-- Search Overlay -->
+<div class="search-overlay" id="search-overlay">
+    <div class="search-overlay-content">
+        <button class="close-search-btn" id="close-search-btn" aria-label="Close Search"><i class="fas fa-times"></i></button>
+        <div class="search-input-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Start typing to find any match..." autocomplete="off">
+        </div>
+        <div class="search-results-container" id="search-results-container">
+            <div class="search-placeholder">
+                <i class="fas fa-search"></i>
+                <p>Find live matches by team, sport, or title.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="/mobiledetectscript.js" defer></script>
 
 </body>
 </html>
-
