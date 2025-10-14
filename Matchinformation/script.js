@@ -363,7 +363,7 @@ async function loadDiscordWidget() {
             
             moreLink.href = inviteUrl;
             moreLink.target = '_blank';
-            moreLink.rel = 'noopener noreferrer';
+            moreLink.rel = 'noopener noreferrer nofollow';
             moreLink.textContent = 'Discord!';
 
             p.append('and more in our ', moreLink);
@@ -389,3 +389,4 @@ document.addEventListener("DOMContentLoaded", () => {
     setupSearch(); 
     loadDiscordWidget();
 });
+
