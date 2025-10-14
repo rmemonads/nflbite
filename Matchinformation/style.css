@@ -112,9 +112,9 @@ p .skeleton.w-60 { width: 60%; }
   .fullpage { padding: 0 0.5rem; }
   #overlay-search-results .search-result-item { flex-basis: 130px; };
   .header-search {
-    max-width: 140px;
+    max-width: 130px;
   }
-  .header-search input{font-size:12px}
+  .header-search input{font-size:12px; max-width: 130px;}
   .header-left, .header-right{
 	  gap: 7px;
   }
@@ -310,4 +310,5 @@ footer {
 
 @media (max-width: 480px) {
 #sticky-footer-ad .ad-content {padding: 0 10px;}
+
 }
