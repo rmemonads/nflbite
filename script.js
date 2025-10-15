@@ -1,35 +1,13 @@
-// --- [FINAL, CORRECTED & CONFIGURABLE SCRIPT v2] ---
+// --- [v3 - HIGH PERFORMANCE SCRIPT] ---
 
+// =========================================================================
+// === CRITICAL FIRST-PAINT LOGIC ===
+// Code that MUST run immediately. Keep this section as lightweight as possible.
+// =========================================================================
 document.addEventListener("DOMContentLoaded", function() {
 
-    // =========================================================================
-    // === CONFIGURATION ===
-    // All customizable URLs and settings are here. Change these values to update the site.
-    // =========================================================================
-    const CONFIG = {
-        // The base URL for the sports data API
-        apiBaseUrl: 'https://streamed.pk/api',
-
-        // The path to your match details page
-        matchPageUrl: '/Matchinformation/',
-
-        // The path to your search results page
-        searchResultUrl: '/SearchResult/',
-
-        // **NEW**: The URL hash to use when the search overlay is open
-        searchUrlHash: '#search',
-
-        // Your Discord server ID for the API widget
-        discordServerId: '1422384816472457288',
-
-        // A fallback Discord invite link in case the API fails
-        discordFallbackInvite: 'https://discord.gg/your-default-fallback-invite',
-        
-        // A placeholder image for match cards when a poster is not available
-        placeholderImageUrl: 'https://methstreams.world/mysite.jpg'
-    };
-
     // --- 1. STICKY HEADER LOGIC ---
+    // This is lightweight and affects layout, so it runs early.
     (function setupStickyHeader() {
         const header = document.querySelector(".main-header");
         const titleElement = document.getElementById("main-title");
@@ -41,22 +19,47 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 header.classList.remove("sticky");
             }
-        });
+        }, { passive: true }); // Added passive listener for better scroll performance
     })();
+
+});
+
+
+// =========================================================================
+// === DEFERRED, NON-CRITICAL LOGIC ===
+// This entire block runs only AFTER the page is fully loaded and visible,
+// ensuring it does not impact FCP or LCP.
+// =========================================================================
+window.addEventListener('load', function() {
+
+    const CONFIG = {
+        apiBaseUrl: 'https://streamed.pk/api',
+        matchPageUrl: '/Matchinformation/',
+        searchResultUrl: '/SearchResult/',
+        searchUrlHash: '#search',
+        discordServerId: '1422384816472457288',
+        discordFallbackInvite: 'https://discord.gg/your-default-fallback-invite',
+        placeholderImageUrl: 'https://methstreams.world/mysite.jpg'
+    };
 
     // --- 2. SCROLL ANIMATION LOGIC ---
     (function setupScrollAnimations() {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         if (!animatedElements.length) return;
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        animatedElements.forEach(element => observer.observe(element));
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(element => observer.observe(element));
+        } else {
+            // Fallback for very old browsers
+            animatedElements.forEach(el => el.classList.add('is-visible'));
+        }
     })();
 
     // --- 3. ADVANCED SEARCH FEATURE LOGIC ---
@@ -92,8 +95,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const statusText = isLive ? "LIVE" : timeFormatted;
             const statusClass = isLive ? "live" : "date";
             const metaText = isLive ? timeFormatted : dateFormatted;
+            // The Font Awesome icons in the JS are for the search results, which is fine as the font file will have loaded by then.
             card.innerHTML = `
-                <img src="${buildPosterUrl(match)}" alt="${match.title}" class="match-poster" loading="lazy">
+                <img src="${buildPosterUrl(match)}" alt="${match.title}" class="match-poster" loading="lazy" decoding="async">
                 <div class="status-badge ${statusClass}">${statusText}</div>
                 ${match.popular ? `<div class="popular-badge" title="Popular Match"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.83 2.33C12.5 1.5 11.5 1.5 11.17 2.33L9.45 7.1C9.33 7.44 9.04 7.7 8.69 7.78L3.65 8.63C2.8 8.75 2.47 9.71 3.06 10.27L6.92 13.9C7.17 14.14 7.28 14.49 7.2 14.85L6.15 19.81C5.97 20.66 6.77 21.3 7.55 20.89L11.79 18.53C12.11 18.35 12.49 18.35 12.81 18.53L17.05 20.89C17.83 21.3 18.63 20.66 18.45 19.81L17.4 14.85C17.32 14.49 17.43 14.14 17.68 13.9L21.54 10.27C22.13 9.71 21.8 8.75 20.95 8.63L15.91 7.78C15.56 7.7 15.27 7.44 15.15 7.1L13.43 2.33Z"/></svg></div>` : ''}
                 <div class="match-info"><div class="match-title">${match.title}</div><div class="match-meta-row"><span class="match-category">${match.category}</span><span>${metaText}</span></div></div>`;
@@ -199,4 +203,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 discordButton.href = CONFIG.discordFallbackInvite;
             });
     })();
+
+    // --- 5. LAZY-LOAD MOBILE AD SCRIPT ---
+    (function lazyLoadMobileAdScript() {
+        // Wait 2 seconds after the page is interactive before loading the ad script
+        setTimeout(() => {
+            const script = document.createElement('script');
+            script.src = '/mobiledetectscript.js';
+            script.defer = true;
+            document.body.appendChild(script);
+        }, 2000);
+    })();
+
 });
