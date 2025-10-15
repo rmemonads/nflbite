@@ -7,18 +7,29 @@
   <meta name="description" content="Watch NFLbite live streams for NFL, NBA, soccer, F1 & more. Explore free sports streaming, alternatives & real-time updates today!">
   <meta name="google-site-verification" content="ILiaMPM107itwNIC-LA-IOFjOAW2EiOn4Zligi5PDvg" />
 
+  <!-- Performance: Preconnect to critical third-party domains -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
   <link rel="canonical" href="https://nflbite.top/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Performance: Critical CSS is inlined for instant rendering -->
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#ff5e00;--white:#eef2ff;--glass:rgba(255,255,255,0.03)}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:#0a0a0a;color:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}body a{color:#ff4747}header{padding:8px 20px;display:flex;justify-content:center}.main-header{padding:10px 20px;display:flex;justify-content:center;transition:background-color .3s ease}.nav-menu{list-style:none;display:flex;gap:10px;flex-wrap:nowrap;margin:0;padding:5px 8px;justify-content:center;align-items:center}.nav-menu li.menu-item{flex-shrink:1}.nav-menu li a{color:#0ea5a4;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:.3s}main{display:block}.categories-container{width:90%;max-width:1400px;margin:0 auto;padding:1rem 0}.main-content-title{text-align:center;font-size:clamp(1.5rem,5vw,2.2rem);font-weight:700;color:#fff;margin:1.5rem 0 3rem;padding:0 1rem;letter-spacing:.5px;text-shadow:1px 1px 4px rgba(0,0,0,.6)}.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}.category-card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;background-color:#0c121e;border-radius:16px;text-decoration:none;color:#fff;border:1px solid rgba(255,94,0,.3);box-shadow:0 4px 10px rgba(0,0,0,.4);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.category-card img{width:90px;height:90px;object-fit:contain;margin-bottom:1.5rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));transition:transform .3s ease;z-index:2}.category-card span{font-size:1.25rem;font-weight:600;display:block;color:#fff;text-transform:uppercase;letter-spacing:1px;z-index:2;text-align:center}.nav-discord-btn a{display:flex;align-items:center;gap:.5rem;background-color:#5865F2;color:#fff!important;font-weight:600;padding:6px 14px;border-radius:6px;transition:.3s;white-space:nowrap}.nav-discord-btn i{font-size:1.2em}.search-and-schedule-container{display:flex;gap:1rem;align-items:center;margin-bottom:3rem;padding:0 1rem}.search-trigger{flex-grow:1;display:flex;align-items:center;gap:.75rem;background-color:#0c121e;padding:.8rem 1rem;border-radius:8px;border:1px solid rgba(255,94,0,.3);cursor:pointer;transition:all .3s ease;color:var(--muted)}.search-trigger i{color:var(--accent)}.schedule-button{flex-shrink:0;padding:.8rem 1.5rem;background-color:var(--accent);color:#fff;font-weight:600;text-decoration:none;border-radius:8px;transition:background-color .3s ease;text-align:center}@media(max-width:768px){header{justify-content:center;padding:8px 10px}.nav-menu{overflow-x:auto;-webkit-overflow-scrolling:touch}.nav-menu li a{font-size:14px;padding:2px;white-space:nowrap}.main-content-title{margin:1rem 0 2rem;font-size:1.4rem}.categories-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem}.category-card{padding:2rem 1rem}.nav-discord-btn a{padding:4px 10px;font-size:14px}}@media(max-width:600px){.search-and-schedule-container{flex-direction:column;align-items:stretch}}@media(max-width:480px){.categories-container{width:95%;margin:0 auto}.categories-grid{grid-template-columns:1fr 1fr;gap:1rem}.category-card img{max-width:70px;height:70px}.category-card span{font-size:1rem}}
+  </style>
+
+  <!-- Performance: Load main stylesheet asynchronously without blocking render -->
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
   
+  <!-- Performance: Load Font Awesome asynchronously without blocking render -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y99MPECJ5" defer></script>
-  <script defer>
+  <!-- Google tag (gtag.js) - Already optimized with async/defer -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y99MPECJ5"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -35,7 +46,6 @@
     <li class="menu-item"><a href="/Schedule/#/Baseball">MLB</a></li>
     <li class="menu-item"><a href="/Schedule/#/Fight">UFC</a></li>
     <li class="menu-item"><a href="/Schedule/#/Motor-sports">F1</a></li>
-    <!-- **UPDATED**: Added an ID to the anchor tag -->
     <li class="nav-discord-btn"><a id="discord-join-link" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Join Discord</a></li>
   </ul>
 </header>
@@ -55,7 +65,7 @@
     </div>
 
     <div class="categories-grid">
-      <!-- Your category cards are here, unchanged -->
+      <!-- Your category cards are here, unchanged. Image loading is already well-optimized. -->
       <a href="/Schedule/#/basketball" class="category-card"><img src="./Images/Basketball.webp" alt="Basketball Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>Basketball</span></a>
       <a href="/Schedule/#/football" class="category-card"><img src="./Images/Football.webp" alt="Football Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>Football</span></a>
       <a href="/Schedule/#/american-football" class="category-card"><img src="./Images/American-football.webp" alt="American Football Logo" loading="eager" fetchpriority="high" width="90" height="90"><span>American Football</span></a>
@@ -218,5 +228,6 @@
 
 </body>
 </html>
+
 
 
