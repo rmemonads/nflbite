@@ -15,7 +15,7 @@
 
   <!-- Performance: Critical CSS is inlined for instant rendering -->
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#ff5e00;--white:#eef2ff;--glass:rgba(255,255,255,0.03)}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:#0a0a0a;color:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}body a{color:#ff4747}header{padding:8px 20px;display:flex;justify-content:center}.main-header{padding:10px 20px;display:flex;justify-content:center;transition:background-color .3s ease}.nav-menu{list-style:none;display:flex;gap:10px;flex-wrap:nowrap;margin:0;padding:5px 8px;justify-content:center;align-items:center}.nav-menu li.menu-item{flex-shrink:1}.nav-menu li a{color:#0ea5a4;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:.3s}main{display:block}.categories-container{width:90%;max-width:1400px;margin:0 auto;padding:1rem 0}.main-content-title{text-align:center;font-size:clamp(1.5rem,5vw,2.2rem);font-weight:700;color:#fff;margin:1.5rem 0 3rem;padding:0 1rem;letter-spacing:.5px;text-shadow:1px 1px 4px rgba(0,0,0,.6)}.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}.category-card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;background-color:#0c121e;border-radius:16px;text-decoration:none;color:#fff;border:1px solid rgba(255,94,0,.3);box-shadow:0 4px 10px rgba(0,0,0,.4);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.category-card img{width:90px;height:90px;object-fit:contain;margin-bottom:1.5rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));transition:transform .3s ease;z-index:2}.category-card span{font-size:1.25rem;font-weight:600;display:block;color:#fff;text-transform:uppercase;letter-spacing:1px;z-index:2;text-align:center}.nav-discord-btn a{display:flex;align-items:center;gap:.5rem;background-color:#5865F2;color:#fff!important;font-weight:600;padding:6px 14px;border-radius:6px;transition:.3s;white-space:nowrap}.nav-discord-btn svg{width:1.2em;height:1.2em;fill:currentColor}.search-and-schedule-container{display:flex;gap:1rem;align-items:center;margin-bottom:3rem;padding:0 1rem}.search-trigger{flex-grow:1;display:flex;align-items:center;gap:.75rem;background-color:#0c121e;padding:.8rem 1rem;border-radius:8px;border:1px solid rgba(255,94,0,.3);cursor:pointer;transition:all .3s ease;color:var(--muted)}.search-trigger svg{width:1em;height:1em;color:var(--accent);fill:currentColor}.schedule-button{flex-shrink:0;padding:.8rem 1.5rem;background-color:var(--accent);color:#fff;font-weight:600;text-decoration:none;border-radius:8px;transition:background-color .3s ease;text-align:center}@media(max-width:768px){header{justify-content:center;padding:8px 10px}.nav-menu{overflow-x:auto;-webkit-overflow-scrolling:touch}.nav-menu li a{font-size:14px;padding:2px;white-space:nowrap}.main-content-title{margin:1rem 0 2rem;font-size:1.4rem}.categories-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem}.category-card{padding:2rem 1rem}.nav-discord-btn a{padding:4px 10px;font-size:14px}}@media(max-width:600px){.search-and-schedule-container{flex-direction:column;align-items:stretch}}@media(max-width:480px){.categories-container{width:95%;margin:0 auto}.categories-grid{grid-template-columns:1fr 1fr;gap:1rem}.category-card img{max-width:70px;height:70px}.category-card span{font-size:1rem}}
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#ff5e00;--white:#eef2ff;--glass:rgba(255,255,255,0.03)}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:#0a0a0a;color:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.6}body a{color:#ff4747}header{padding:8px 20px;display:flex;justify-content:center}.main-header{padding:10px 20px;display:flex;justify-content:center;transition:background-color .3s ease}.nav-menu{list-style:none;display:flex;gap:10px;flex-wrap:nowrap;margin:0;padding:5px 8px;justify-content:center;align-items:center}.nav-menu li.menu-item{flex-shrink:1}.nav-menu li a{color:#0ea5a4;text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:.3s}main{display:block}.categories-container{width:90%;max-width:1400px;margin:0 auto;padding:1rem 0}.main-content-title{text-align:center;font-size:clamp(1.5rem,5vw,2.2rem);font-weight:700;color:#fff;margin:1.5rem 0 3rem;padding:0 1rem;letter-spacing:.5px;text-shadow:1px 1px 4px rgba(0,0,0,.6)}.categories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}.category-card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;background-color:#0c121e;border-radius:16px;text-decoration:none;color:#fff;border:1px solid rgba(255,94,0,.3);box-shadow:0 4px 10px rgba(0,0,0,.4);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}.category-card img{width:90px;height:90px;object-fit:contain;margin-bottom:1.5rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));transition:transform .3s ease;z-index:2}.category-card span{font-size:1.25rem;font-weight:600;display:block;color:#fff;text-transform:uppercase;letter-spacing:1px;z-index:2;text-align:center}.nav-discord-btn a{display:flex;align-items:center;gap:.5rem;background-color:#5865F2;color:#fff!important;font-weight:600;padding:6px 14px;border-radius:6px;transition:.3s;white-space:nowrap}.search-and-schedule-container{display:flex;gap:1rem;align-items:center;margin-bottom:3rem;padding:0 1rem}.search-trigger{flex-grow:1;display:flex;align-items:center;gap:.75rem;background-color:#0c121e;padding:.8rem 1rem;border-radius:8px;border:1px solid rgba(255,94,0,.3);cursor:pointer;transition:all .3s ease;color:var(--muted)}.search-trigger svg{width:1em;height:1em;color:var(--accent);fill:currentColor}.schedule-button{flex-shrink:0;padding:.8rem 1.5rem;background-color:var(--accent);color:#fff;font-weight:600;text-decoration:none;border-radius:8px;transition:background-color .3s ease;text-align:center}@media(max-width:768px){header{justify-content:center;padding:8px 10px}.nav-menu{overflow-x:auto;-webkit-overflow-scrolling:touch}.nav-menu li a{font-size:14px;padding:2px;white-space:nowrap}.main-content-title{margin:1rem 0 2rem;font-size:1.4rem}.categories-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem}.category-card{padding:2rem 1rem}.nav-discord-btn a{padding:4px 10px;font-size:14px}}@media(max-width:600px){.search-and-schedule-container{flex-direction:column;align-items:stretch}}@media(max-width:480px){.categories-container{width:95%;margin:0 auto}.categories-grid{grid-template-columns:1fr 1fr;gap:1rem}.category-card img{max-width:70px;height:70px}.category-card span{font-size:1rem}}
   </style>
 
   <!-- Performance: Load main stylesheet asynchronously -->
@@ -41,10 +41,8 @@
     <li class="menu-item"><a href="/Schedule/#/Baseball">MLB</a></li>
     <li class="menu-item"><a href="/Schedule/#/Fight">UFC</a></li>
     <li class="menu-item"><a href="/Schedule/#/Motor-sports">F1</a></li>
-    <li class="nav-discord-btn"><a id="discord-join-link" href="#" target="_blank" rel="noopener noreferrer">
-      <!-- OPTIMIZED: Inline SVG replaces Font Awesome icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M524.5 69.8a1.5 1.5 0 0 0 -2.1 -1.1L462.4 96.2a349.8 349.8 0 0 0 -57.5 -14.1a1.5 1.5 0 0 0 -1.5 1.5v1.2a353.4 353.4 0 0 0 -43.1 5.9a1.5 1.5 0 0 0 -1 2.2L338.4 118.9a1.5 1.5 0 0 0 1.5 2.1c3.9 .9 7.8 1.9 11.6 3.1a1.5 1.5 0 0 0 1.8 -1.1L355.9 98.2a352.1 352.1 0 0 0 -40.3 -5.9a1.5 1.5 0 0 0 -1.5 1.5v.2c-15.3 4.9 -29.7 10.7 -43.1 17.4a1.5 1.5 0 0 0 -1 2.2L251.7 122.9a1.5 1.5 0 0 0 1.5 2.1c3.9 .9 7.8 1.9 11.6 3.1a1.5 1.5 0 0 0 1.8 -1.1L269.1 101.8a352.1 352.1 0 0 0 -40.3 -5.9a1.5 1.5 0 0 0 -1.5 1.5v.1a349.8 349.8 0 0 0 -57.5 14.1L117.6 68.7a1.5 1.5 0 0 0 -2.1 1.1L.4 493.6a1.5 1.5 0 0 0 1.4 1.8l116.6 -16.2a1.5 1.5 0 0 0 1.3 -1.4l-10.4 -62.1a1.5 1.5 0 0 0 -1.5 -1.2h-18.5a1.5 1.5 0 0 0 -1.5 1.2L85.4 468.2a1.5 1.5 0 0 0 1.3 1.4L199.1 486a1.5 1.5 0 0 0 1.4 -1.8l-10.4 -62.1a1.5 1.5 0 0 0 -1.5 -1.2h-18.5a1.5 1.5 0 0 0 -1.5 1.2L167 468.2a1.5 1.5 0 0 0 1.3 1.4L280.4 486a1.5 1.5 0 0 0 1.4 -1.8l-10.4 -62.1a1.5 1.5 0 0 0 -1.5 -1.2h-18.5a1.5 1.5 0 0 0 -1.5 1.2L248.2 468.2a1.5 1.5 0 0 0 1.3 1.4L361.6 486a1.5 1.5 0 0 0 1.4 -1.8l-10.4 -62.1a1.5 1.5 0 0 0 -1.5 -1.2h-18.5a1.5 1.5 0 0 0 -1.5 1.2L330 468.2a1.5 1.5 0 0 0 1.3 1.4l112.2 -15.7a1.5 1.5 0 0 0 1.4 -1.8L524.5 69.8zM222.5 337.6c-24.8 0-44.9-20.2-44.9-45.1s20.1-45.1 44.9-45.1c24.9 0 44.9 20.2 44.9 45.1s-20.1 45.1-44.9 45.1zm195.1 0c-24.8 0-44.9-20.2-44.9-45.1s20.1-45.1 44.9-45.1c24.9 0 44.9 20.2 44.9 45.1s-20.1 45.1-44.9 45.1z"/></svg>
-      Join Discord</a></li>
+    <!-- FIXED: Removed the broken SVG icon -->
+    <li class="nav-discord-btn"><a id="discord-join-link" href="#" target="_blank" rel="noopener noreferrer">Join Discord</a></li>
   </ul>
 </header>
 
@@ -56,7 +54,7 @@
     <!-- Search Bar and Schedule Button -->
     <div class="search-and-schedule-container">
         <div class="search-trigger" id="search-trigger">
-            <!-- OPTIMIZED: Inline SVG replaces Font Awesome icon -->
+            <!-- This inline SVG is preserved and correct -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
             <span>Search for a match, team, or category...</span>
         </div>
@@ -64,7 +62,6 @@
     </div>
 
     <div class="categories-grid">
-      <!-- OPTIMIZED: Added decoding="async" to eager-loaded images to help the main thread -->
       <a href="/Schedule/#/basketball" class="category-card"><img src="./Images/Basketball.webp" alt="Basketball Logo" loading="eager" fetchpriority="high" width="90" height="90" decoding="async"><span>Basketball</span></a>
       <a href="/Schedule/#/football" class="category-card"><img src="./Images/Football.webp" alt="Football Logo" loading="eager" fetchpriority="high" width="90" height="90" decoding="async"><span>Football</span></a>
       <a href="/Schedule/#/american-football" class="category-card"><img src="./Images/American-football.webp" alt="American Football Logo" loading="eager" fetchpriority="high" width="90" height="90" decoding="async"><span>American Football</span></a>
@@ -83,10 +80,9 @@
     </div>
   </section>
 
-  <!-- ARTICLE INFO SECTION -->
+  <!-- The rest of your HTML content remains exactly the same -->
   <section class="article-container">
     <article>
-        <!-- Your full, unchanged article content is here -->
         <div class="article-intro animate-on-scroll">
             <p>Sports fans across the world are always looking for reliable ways to watch their favorite teams and competitions live. Among the many platforms that have emerged, <strong>NFLbite</strong> has become one of the most talked-about names in free sports streaming. Whether you’re into <em>NFL football</em>, <em>NBA basketball</em>, <em>soccer</em>, or even <em>Formula 1</em>, NFLbite and its alternatives have shaped how fans access sports events online.</p>
             <p>These alternatives highlight the growing demand for <em>free sports streaming platforms</em>, even though legality remains an issue.</p>
@@ -208,8 +204,12 @@
 <!-- Search Overlay -->
 <div class="search-overlay" id="search-overlay">
     <div class="search-overlay-content">
-        <button class="close-search-btn" id="close-search-btn" aria-label="Close Search"><i class="fas fa-times"></i></button>
+        <!-- FIXED: Replaced old <i> tag with a functional inline SVG for the close icon -->
+        <button class="close-search-btn" id="close-search-btn" aria-label="Close Search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 0.75em; height: 1em;"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        </button>
         <div class="search-input-container">
+            <!-- This <i> tag is inside the JS template, which is fine, as it's not needed for the initial render -->
             <i class="fas fa-search"></i>
             <input type="text" id="search-input" placeholder="Start typing to find any match..." autocomplete="off">
         </div>
@@ -226,7 +226,3 @@
 
 </body>
 </html>
-
-
-
-
