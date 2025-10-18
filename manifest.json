@@ -1,5 +1,5 @@
 {
-  "name": "NFLBite.Top",
+  "name": "NFLBite",
   "short_name": "NFLBite",
   "start_url": "/",
   "display": "standalone",
@@ -22,3 +22,4 @@
   ]
 
 }
+
