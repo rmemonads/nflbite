@@ -12,6 +12,11 @@
 
   <link rel="canonical" href="https://nflbite.top/">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<!-- Link to the Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Theme color for Chrome on Android -->
+    <meta name="theme-color" content="#0078ff">
 
   <!-- Performance: Critical CSS is inlined for instant rendering -->
   <style>
@@ -226,7 +231,23 @@
 
 	<script src="bookmark-prompt.js" defer></script>
 
+	<!-- ... your page content ... -->
+
+    <script defer>
+      // Register the service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+
 
 </body>
 </html>
+
 
