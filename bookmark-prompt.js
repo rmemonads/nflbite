@@ -1,6 +1,5 @@
 // ==================================================
-// Universal Bookmark / Add-to-Home Prompt
-// Author: ChatGPT (Custom for your sites)
+// Universal Bookmark / Add-to-Home Prompt (Revised)
 // ==================================================
 
 (function() {
@@ -9,22 +8,39 @@
   const STORAGE_KEY = 'bookmarkPromptDate';
   const TODAY = new Date().toDateString();
 
+  let deferredPrompt;
+
   // === Detect if already added to home screen (mobile) ===
   const isStandalone =
     window.matchMedia('(display-mode: standalone)').matches ||
     window.navigator.standalone;
 
-  // === Detect mobile ===
+  // === Detect mobile devices ===
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   // === If already added or already shown today, skip ===
   if (isStandalone) return;
   if (localStorage.getItem(STORAGE_KEY) === TODAY) return;
 
+  // Listen for the beforeinstallprompt event
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+  });
+
   // === Wait until page fully loaded, then delay ===
   window.addEventListener('load', () => {
     setTimeout(() => {
-      showBookmarkPrompt();
+      // Only show the prompt if the site is installable (on non-iOS mobile) or on desktop
+      if ((isMobile && !isIOS && deferredPrompt) || !isMobile) {
+        showBookmarkPrompt();
+      } else if (isIOS) {
+        // Show a prompt with manual instructions for iOS
+        showBookmarkPrompt();
+      }
     }, SHOW_DELAY);
   });
 
@@ -33,20 +49,26 @@
     // Create overlay container
     const container = document.createElement('div');
     container.id = 'bookmark-prompt-container';
+    
+    let title = 'Bookmark This Site';
+    let message = 'Press <b>Ctrl + D</b> (or click the ⭐ beside the address bar) to bookmark this site.';
+
+    if (isMobile) {
+      if (isIOS) {
+        title = 'Add to Home Screen';
+        message = 'Tap the Share button and then "Add to Home Screen" for quick access.';
+      } else {
+        title = 'Add to Home Screen';
+        message = 'Add this website to your home screen for quick access anytime.';
+      }
+    }
+
     container.innerHTML = `
       <div class="bookmark-prompt">
         <button class="bookmark-close" aria-label="Close">&times;</button>
         <div class="bookmark-content">
-          <h3 class="bookmark-title">${
-            isMobile ? 'Add to Home Screen' : 'Bookmark This Site'
-          }</h3>
-          <p class="bookmark-message">
-            ${
-              isMobile
-                ? 'Add this website to your home screen for quick access anytime.'
-                : 'Press <b>Ctrl + D</b> (or click the ⭐ beside the address bar) to bookmark this site.'
-            }
-          </p>
+          <h3 class="bookmark-title">${title}</h3>
+          <p class="bookmark-message">${message}</p>
           <button class="bookmark-ok">Okay</button>
         </div>
       </div>
@@ -56,8 +78,27 @@
     // === Event Listeners ===
     const closeBtn = container.querySelector('.bookmark-close');
     const okBtn = container.querySelector('.bookmark-ok');
-    closeBtn.addEventListener('click', hidePrompt);
-    okBtn.addEventListener('click', hidePrompt);
+
+    closeBtn.addEventListener('click', () => {
+        hidePrompt();
+    });
+
+    okBtn.addEventListener('click', () => {
+      hidePrompt();
+      
+      // On non-iOS mobile, if the prompt is available, show it
+      if (isMobile && !isIOS && deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+      }
+    });
 
     // === Hide Function ===
     function hidePrompt() {
