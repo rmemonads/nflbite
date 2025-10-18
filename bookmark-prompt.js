@@ -1,5 +1,5 @@
 // ==================================================
-// Universal Bookmark / Add-to-Home Prompt (Revised)
+// Universal Bookmark / Add-to-Home Prompt (Revised & Fixed)
 // ==================================================
 
 (function() {
@@ -23,24 +23,20 @@
   if (isStandalone) return;
   if (localStorage.getItem(STORAGE_KEY) === TODAY) return;
 
-  // Listen for the beforeinstallprompt event
+  // Listen for the beforeinstallprompt event.
+  // This event will only fire if the site is PWA-ready.
   window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
+    // Prevent the default browser install prompt from showing.
     e.preventDefault();
-    // Stash the event so it can be triggered later.
+    // Stash the event so it can be triggered later by our custom button.
     deferredPrompt = e;
   });
 
   // === Wait until page fully loaded, then delay ===
   window.addEventListener('load', () => {
     setTimeout(() => {
-      // Only show the prompt if the site is installable (on non-iOS mobile) or on desktop
-      if ((isMobile && !isIOS && deferredPrompt) || !isMobile) {
-        showBookmarkPrompt();
-      } else if (isIOS) {
-        // Show a prompt with manual instructions for iOS
-        showBookmarkPrompt();
-      }
+      // The logic is simplified: just show the prompt if the initial checks passed.
+      showBookmarkPrompt();
     }, SHOW_DELAY);
   });
 
@@ -56,10 +52,10 @@
     if (isMobile) {
       if (isIOS) {
         title = 'Add to Home Screen';
-        message = 'Tap the Share button and then "Add to Home Screen" for quick access.';
+        message = 'For quick access, tap the Share button and then \'Add to Home Screen\'.';
       } else {
         title = 'Add to Home Screen';
-        message = 'Add this website to your home screen for quick access anytime.';
+        message = 'Add this website to your home screen for quick and easy access.';
       }
     }
 
@@ -79,25 +75,27 @@
     const closeBtn = container.querySelector('.bookmark-close');
     const okBtn = container.querySelector('.bookmark-ok');
 
-    closeBtn.addEventListener('click', () => {
-        hidePrompt();
-    });
+    // The close button just hides the prompt
+    closeBtn.addEventListener('click', hidePrompt);
 
+    // The "Okay" button has the special logic
     okBtn.addEventListener('click', () => {
-      hidePrompt();
-      
-      // On non-iOS mobile, if the prompt is available, show it
+      // On non-iOS mobile, if the browser's install prompt is available, show it
       if (isMobile && !isIOS && deferredPrompt) {
         deferredPrompt.prompt();
+        // We can listen for the user's choice
         deferredPrompt.userChoice.then((choiceResult) => {
           if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
+            console.log('User accepted the Add to Home Screen prompt');
           } else {
-            console.log('User dismissed the A2HS prompt');
+            console.log('User dismissed the Add to Home Screen prompt');
           }
-          deferredPrompt = null;
+          deferredPrompt = null; // The prompt can only be used once.
         });
       }
+      
+      // No matter what, hide our custom prompt after clicking "Okay"
+      hidePrompt();
     });
 
     // === Hide Function ===
@@ -108,7 +106,7 @@
     }
   }
 
-  // === Styles ===
+  // === Styles === (No changes needed here)
   const style = document.createElement('style');
   style.textContent = `
     /* === Universal Bookmark Prompt Styles === */
