@@ -3,32 +3,32 @@
 
   <url>
     <loc>https://nflbite.shop/</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://nflbite.shop/Schedule</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.9</priority>
   </url>
 
     <url>
     <loc>https://nflbite.shop/SearchResult</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.8</priority>
   </url>
 
       <url>
     <loc>https://nflbite.shop/Matchinformation</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.8</priority>
   </url>
 
 
    <url>
     <loc>https://nflbite.shop/Watch</loc>
-    <lastmod>2025-10-14</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.8</priority>
   </url>
 
@@ -37,41 +37,42 @@
 
   <url>
     <loc>https://nflbite.shop/About</loc>
-    <lastmod>2025-09-27</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://nflbite.shop/Terms</loc>
-    <lastmod>2025-09-27</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://nflbite.shop/Privacy</loc>
-    <lastmod>2025-09-27</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://nflbite.shop/Disclaimer</loc>
-    <lastmod>2025-09-27</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://nflbite.shop/DMCA</loc>
-    <lastmod>2025-09-27</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://nflbite.shop/Contact</loc>
-    <lastmod>2025-09-27</lastmod>
+    <lastmod>2025-10-22</lastmod>
     <priority>0.6</priority>
   </url>
 
 </urlset>
+
 
 
 
