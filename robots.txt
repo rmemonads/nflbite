@@ -2,7 +2,8 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://nflbite.shop/sitemap.xml
+Sitemap: https://nflbite.top/sitemap.xml
+
 
 
 
